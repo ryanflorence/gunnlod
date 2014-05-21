@@ -18,6 +18,11 @@ of your mead of poetry.
 
 ![demo](http://recordit.co/66MDtelho8.gif)
 
+Installation
+------------
+
+`npm install gunnlod -g`
+
 Command Line Usage
 ------------------
 
