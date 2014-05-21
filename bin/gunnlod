@@ -4,6 +4,6 @@ var path = require('path');
 var config = require(path.join(process.cwd(), 'gunnlod'));
 app.set('config', config);
 var server = app.listen(3000, function() {
-  console.log('Gunnlod server listening on port ' + server.address().port);
+  console.log('Gunnlod server listening on port dude ' + server.address().port);
 });
 

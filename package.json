@@ -17,7 +17,8 @@
     "broccoli-static-compiler": "^0.1.4",
     "broccoli-merge-trees": "^0.1.3",
     "broccoli-react": "^0.4.0",
-    "broccoli-uglify-js": "^0.1.3"
+    "broccoli-uglify-js": "^0.1.3",
+    "request": "^2.36.0"
   },
   "dependencies": {
     "envify": "^1.2.1",

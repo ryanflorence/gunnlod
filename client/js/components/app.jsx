@@ -1,5 +1,4 @@
 /** @jsx React.DOM */
-
 var React = require('react');
 var store = require('../lib/store');
 var router = require('../lib/router');
@@ -10,17 +9,18 @@ var md = require('meta-marked');
 var App = module.exports = React.createClass({
 
   getInitialState: function() {
-    var state = store.getState();
-    state.navOpen = true;
-    return state;
+    return {
+      data: store.getState(),
+      navOpen: true
+    };
   },
 
-  setStateFromStore: function() {
-    this.setState(store.getState());
+  setDataState: function() {
+    this.setState({data: store.getState()});
   },
 
   componentDidMount: function() {
-    store.onChange = this.setStateFromStore.bind(this);
+    store.onChange = this.setDataState;
     store.getArticles();
     router.start();
   },
@@ -38,16 +38,16 @@ var App = module.exports = React.createClass({
   },
 
   buildLinks: function() {
-    return this.state.articles.records.map(function(article) {
+    return this.state.data.articles.records.map(function(article) {
       var href = '#/article/'+article.name;
-      var active = this.state.article.name === article.name ? 'active' : '';
+      var active = this.state.data.article.name === article.name ? 'active' : '';
       return <li><a className={active} href={href}>{article.name}</a></li>;
     }, this);
   },
 
   buildDetail: function() {
-    if (this.state.article.loaded) {
-      var props = clone(this.state.article);
+    if (this.state.data.article.loaded) {
+      var props = clone(this.state.data.article);
       props.onToggleNav = this.toggleNav;
       props.config = this.props.config;
       return Article(props);

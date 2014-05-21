@@ -24,7 +24,7 @@ function app() {
 function assets() {
   return pickFiles('client', {
     srcDir: './',
-    files: ['**/*.html', '**/*.css'],
+    files: ['**/*.css'],
     destDir: './'
   });
 }

@@ -3,10 +3,19 @@ var router = express.Router();
 var fs = require('fs');
 var path = require('path');
 var clone = require('clone');
+var request = require('request');
 
 module.exports = function(app) {
 
-  /* GET home page. */
+  router.get('/', function(req, res) {
+    getAssetPath(function(assetPath) {
+      res.render('index', {
+        title: 'Gunnlod: '+path.relative(process.cwd(), srcDirectory()),
+        assetPath: assetPath
+      });
+    });
+  });
+
   router.get('/articles', function(req, res) {
     var files = fs.readdirSync(srcDirectory()).map(function(name) {
       return { name: name };
@@ -44,4 +53,10 @@ module.exports = function(app) {
 
   return router;
 };
+
+function getAssetPath(cb) {
+  request('http://localhost:4200/application.js', function(err) {
+    cb(err ? '' : 'http://localhost:4200');
+  });
+}
 

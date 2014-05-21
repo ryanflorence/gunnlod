@@ -1,6 +1,44 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+html {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
 body {
   font-family: "Helvetica Neue";
   color: hsl(200, 50%, 10%);
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+}
+
+pre {
+  font-family: Consolas, Monaco, monospace;
+}
+
+pre {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  font-size: .8rem;
+  line-height: 1.4;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f9f9f9;
 }
 
 path {
@@ -29,11 +67,6 @@ path {
   text-align: right;
 }
 
-html, body {
-  height: 100%;
-  margin: 0;
-}
-
 .App {
   height: 100%;
 }
@@ -48,7 +81,7 @@ html, body {
 }
 
 .nav-open .master {
-  width: 400px;
+  width: 20%;
 }
 
 .Toolbar {
@@ -84,12 +117,12 @@ html, body {
 }
 
 .master a {
+  font-size: 14px;
   outline: none;
   display: block;
   color: hsl(200, 90%, 100%);
-  padding: 0px 10px;
+  padding: 2px 10px;
   text-decoration: none;
-  font-size: 12px;
   white-space: nowrap;
 }
 
