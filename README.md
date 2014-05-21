@@ -49,7 +49,7 @@ Command Line Usage
    };
    ```
 
-3. Run it! `$ gunnlod`
+3. Run it! `$ gunnlod` or `$ gunnlod <port>`
 
 Programmatic Usage
 ------------------
