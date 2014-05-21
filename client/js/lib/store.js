@@ -20,6 +20,13 @@ module.exports = {
     articleIndex: {}
   },
 
+  createArticle: function(name) {
+    xhr.postJSON('/articles', { name: name }, function() {
+      this.state.articles.records.push({name: name});
+      this.onChange();
+    }.bind(this));
+  },
+
   getArticles: function() {
     if (this.state.articles.loaded) {
       this.onChange();

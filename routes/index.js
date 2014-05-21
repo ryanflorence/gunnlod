@@ -7,6 +7,26 @@ var request = require('request');
 
 module.exports = function(app) {
 
+  router.get('/application.js', function(req, res) {
+    res.type('text/javascript');
+    getAssetPath(function(assetPath) {
+      fs.readFile(path.join(__dirname, '..', 'public', 'application.js'), function(err, file) {
+        if (err) throw new Error(err);
+        res.send(file.toString());
+      });
+    });
+  });
+
+  router.get('/main.css', function(req, res) {
+    res.type('text/css');
+    getAssetPath(function(assetPath) {
+      fs.readFile(path.join(__dirname, '..', 'public', 'main.css'), function(err, file) {
+        if (err) throw new Error(err);
+        res.send(file.toString());
+      });
+    });
+  });
+
   router.get('/', function(req, res) {
     getAssetPath(function(assetPath) {
       res.render('index', {
@@ -21,6 +41,14 @@ module.exports = function(app) {
       return { name: name };
     });
     res.json({articles: files});
+  });
+
+  router.post('/articles', function(req, res) {
+    var name = req.body.name;
+    var filePath = path.join(srcDirectory(), name);
+    fs.writeFile(filePath, '', function(err) {
+      res.json({name: name});
+    });
   });
 
   router.get('/article/:name', function(req, res) {

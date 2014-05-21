@@ -78,7 +78,7 @@ var Article = module.exports = React.createClass({
     }
     return (
       <div className="Article flex-column flex-grow">
-        <Toolbar onSave={this.saveArticle} onToggle={this.props.onToggleNav}/>
+        <Toolbar onSave={this.saveArticle} onToggle={this.props.onToggleNav} />
         <div className="flex-row flex-grow editor">
           <textarea
             className="code flex-grow"

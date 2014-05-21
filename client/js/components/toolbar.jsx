@@ -2,8 +2,14 @@
 
 var React = require('react');
 var icons = require('../lib/icons');
+var store = require('../lib/store');
 
 var Toolbar = module.exports = React.createClass({
+
+  createItem: function() {
+    var name = prompt('filename?');
+    store.createArticle(name);
+  },
 
   render: function() {
     return (
@@ -15,6 +21,10 @@ var Toolbar = module.exports = React.createClass({
         </div>
 
         <div className="flex-grow align-right">
+          <button className="new" onClick={this.createItem}>
+            {icons.create()}
+          </button>
+
           <button className="save" onClick={this.props.onSave}>
             {icons.save()}
           </button>

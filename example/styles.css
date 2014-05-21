@@ -1,0 +1,14 @@
+body {
+  padding: 50px;
+  font-family: "Helvetica Neue", Arial;
+}
+
+hr {
+  border: none;
+  border-bottom: 1px solid #ccc;
+}
+
+* {
+  font-weight: 200;
+}
+
