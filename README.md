@@ -16,6 +16,8 @@ Gunnlod is a slick interface to edit a folder of markdown files.
 In other words, its everything you've always wanted in a guardian goddes
 of your mead of poetry.
 
+![demo](http://recordit.co/66MDtelho8.gif)
+
 Command Line Usage
 ------------------
 
