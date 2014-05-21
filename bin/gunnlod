@@ -1,0 +1,9 @@
+#!/usr/bin/env node
+var app = require('../app');
+var path = require('path');
+var config = require(path.join(process.cwd(), 'gunnlod'));
+app.set('config', config);
+var server = app.listen(3000, function() {
+  console.log('Gunnlod server listening on port ' + server.address().port);
+});
+
